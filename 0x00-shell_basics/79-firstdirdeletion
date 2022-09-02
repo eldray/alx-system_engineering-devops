@@ -1,1 +1,2 @@
 rm -r /tmp/my_first_directory
+rmdir /tmp/my_first_directory
