@@ -1,1 +1,1 @@
-SE Devops Readme
+This project is about Shell I/O Redirections
