@@ -1,1 +1,1 @@
-This project is about input and output redirections
+SE Devops Readme
