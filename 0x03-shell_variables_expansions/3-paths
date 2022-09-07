@@ -1,2 +1,2 @@
 #!/bin/bash
-hello me
+echo $(('echo $PATH|grep-o ":/"|wc -l'+1))
