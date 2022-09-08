@@ -1,2 +1,2 @@
 #!/bin/bash
-helo me
+echo $((2#$BINARY))

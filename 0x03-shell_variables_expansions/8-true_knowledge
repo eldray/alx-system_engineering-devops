@@ -1,2 +1,2 @@
 #!/bin/bash
-hell ome
+echo -e $((128 + TRUEKNOWLEDGE))
