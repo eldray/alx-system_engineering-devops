@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# A bash scrip that displays Best School using an "until loop"
+
+i=10
+length=10
+until [$i = $length];
+do
+    echo "Best School"
+    ((i++))
+done
