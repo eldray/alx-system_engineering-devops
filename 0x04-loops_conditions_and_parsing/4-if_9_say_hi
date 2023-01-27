@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # A bash script that displays Best School 0 times using while loop
-# in the 9th iteration it displays best schhol and hi then it continues
+# in the 9th iteration it displays best school and hi then it continues
 
 i=0
 while ((i<10));
