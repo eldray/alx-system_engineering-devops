@@ -15,4 +15,8 @@ if __name__ == '__main__':
     print("Employee {} is done with tasks({}/{}):".format(usr_id.get("name"),
                                                           len(completed),
                                                           len(to_do)))
+<<<<<<< HEAD
     [print("\t {}".format(title)) for title in completed]
+=======
+    [print("\t {}".format(title)) for title in completed]
+>>>>>>> d6a8d0dcf23b28829cd6b9cf5fd4f6415a4cc277

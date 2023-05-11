@@ -16,4 +16,8 @@ if __name__ == "__main__":
                 "task": t.get("title"),
                 "completed": t.get("completed"),
                 "username": username
+<<<<<<< HEAD
             } for t in todos]}, jsonfile)
+=======
+            } for t in todos]}, jsonfile)
+>>>>>>> d6a8d0dcf23b28829cd6b9cf5fd4f6415a4cc277
