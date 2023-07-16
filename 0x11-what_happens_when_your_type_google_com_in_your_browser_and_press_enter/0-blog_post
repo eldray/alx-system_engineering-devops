@@ -1,0 +1,33 @@
+The Journey of a Web Request: Unveiling the Magic behind https://www.google.com
+
+
+Introduction:
+Have you ever marveled at the enchanting process that unfolds when you enter “https://www.google.com" in your browser and press Enter? In this article, I embark on an exciting exploration of the captivating journey a web request undertakes, unraveling its technical intricacies. I will try to demystify these complex concepts using the settings of an African community, so that you can understand in simple illustrative way. Let’s embark on this enlightening adventure!
+
+DNS Request: Paving the Path
+When you type “https://www.google.com," your browser sets off on a grand quest to discover the rightful server that houses the name Google. It sends a humble request to a Domain Name System(DNS) resolver, seeking the IP address associated with the entered domain name. This quest mirrors the journey of a young warrior seeking counsel from a wise elder who possesses the knowledge to connect with the right entity. The DNS resolver, akin to a revered oracle, consults its vast directory, revealing the precise IP address.
+
+TCP/IP: Weaving Connections of Strength
+Once the IP address is unveiled, your browser forges a connection with the server through the powerful bond of TCP/IP. This connection, similar to a sturdy bridge traversing a mighty river, ensures a secure pathway for information to journey between your computer and the server. TCP ensures the orderly delivery of data packets, much like messengers bearing important scrolls, ensuring they arrive intact and in the right sequence. It embraces the philosophy of Ubuntu, where interconnectedness and mutual support enable the seamless flow of knowledge.
+
+Firewall: Guardians of the Pathway
+Before the connection is established, your request must pass through vigilant firewalls, the trusted guardians of the digital realm. These protectors scrutinize the request, ensuring its safety and authenticity. Just like wise gatekeepers at a sacred gathering, firewalls shield the server from potential threats and deny unauthorized entry, preserving the sanctity of the online realm. Their watchful eyes reflect the ancestral wisdom passed down through generations, safeguarding the community from harm.
+
+HTTPS/SSL: Safeguarding the Communication
+To safeguard your data during its journey across the vast internet expanse, your browser and the server engage in a sacred handshake. This ritual employs the protective enchantments of HTTPS and SSL, invoking the spirits of trust and security. It’s much like exchanging secret codes with the server, forging an impregnable connection. This bond ensures that your information remains veiled from prying eyes, shrouded in an impenetrable cloak of encryption. The rituals of HTTPS and SSL reflect the spirit of Ubuntu, where communal trust underpins the harmony of shared knowledge.
+
+Load-Balancer: Sharing the Load
+Websites like Google, are ceaselessly inundated or flooded with a torrent of requests. To gracefully bear this weight, they call upon the wisdom of load-balancers. These noble guardians distribute the incoming requests across multiple servers, harmonizing the flow. Just as a wise village elder delegates tasks among the community, load-balancers ensure equilibrium, enabling swifter responses to seekers of knowledge. Just like the Ubuntu philosophy, where the collective effort uplifts the entire community.
+
+Web Server: Retrieving the Web Page,
+Like an African Tale Unfolding As your request arrives at the server’s threshold, it is welcomed by a web server, adorned with the names Apache or Nginx. The web server gracefully embraces the request, embarking on a journey akin to a master storyteller sharing an ancient African tale. It navigates through its vast repository, retrieving the web page you seek, unveiling the treasures of knowledge. Just as a village elder retrieves a treasured book from the shelves, the web server delicately fetches the desired wisdom, breathing life into the story of the digital realm.
+
+Application Server: Enriching the Experience
+At times, the web server calls upon the wisdom of an application server, such as Tomcat or Node.js. These servers offer specialized knowledge, enhancing the web server’s capabilities. They handle specific tasks, be it weaving dynamic content or processing forms. In African artistry, we can compare it to skilled artisans perfecting a masterpiece with their craft. Their expertise elevates the web experience, infusing it with the vibrancy and ingenuity.
+
+Database: The Keeper of Wisdom
+If your quest involves retrieving or storing knowledge, the application server seeks wisdom from the sacred database. These databases, bearing names like MySQL or MongoDB, are like revered sages, meticulously organizing and managing knowledge. They ensure that the sought-after wisdom is retrieved with precision and celerity, just as the village elder retrieves ancestral tales from the ancient scrolls.
+
+Conclusion: The mesmerizing journey of a web request, from the humble entry of “https://www.google.com" to the wondrous unveiling of the web page, encapsulates a symphony of technical marvels intertwined with other requests. Just like the rich tapestry of African heritage, each step; from the quest for the IP address through DNS to the forging of connections with TCP/IP, the guardianship of firewalls, the enchantments of HTTPS/SSL, the equilibrium of load-balancers, the storytelling of web servers, the expertise of application servers, and the wisdom of databases, paints a tapestry of African ingenuity, resilience, and communal spirit.
+
+Understanding these concepts not only enriches our knowledge of the web stack but also highlights the remarkable depth beneath the surface of our online experiences. So, as you traverse the digital realm, remember the magical mechanics that bring forth the wonders of the web, imbued with the spirit of Ubuntu, where shared knowledge empowers and uplifts us all.
