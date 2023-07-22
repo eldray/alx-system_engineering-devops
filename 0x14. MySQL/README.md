@@ -41,3 +41,4 @@ https://www.hostinger.com/tutorials/mysql-show-users/#:~:text=2.-,Use%20the%20My
 
 mysql: Show GRANTs for all users
 https://dba.stackexchange.com/questions/23265/mysql-show-grants-for-all-users
+
