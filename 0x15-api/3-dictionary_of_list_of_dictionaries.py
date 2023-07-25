@@ -26,7 +26,7 @@ def export_all_to_json():
         for task in todos_data:
             task_dict = {
                 "username": user["username"],
-                "task": task["title"],
+                "task": task["title"],  # Use "title" instead of "name"
                 "completed": task["completed"],
             }
             tasks.append(task_dict)
