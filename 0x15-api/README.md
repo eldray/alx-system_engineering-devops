@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-0x15-api
-=======
 # 0x15 API
 
 ## Learning Objectives
