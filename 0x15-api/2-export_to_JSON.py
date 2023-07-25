@@ -1,23 +1,31 @@
 #!/usr/bin/python3
 """Exports to-do list information for a given employee ID to JSON format."""
+
+import requests as r
 import json
-import requests
 import sys
 
-if __name__ == "__main__":
-    user_id = sys.argv[1]
-    url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(url + "users/{}".format(user_id)).json()
-    username = user.get("username")
-    todos = requests.get(url + "todos", params={"userId": user_id}).json()
+def export_to_json(employee_id, todos_data):
+    employee_name = todos_data[0]['name']
+    json_data = {
+        employee_id: [
+            {
+                "task": todo['title'],
+                "completed": todo['completed'],
+                "username": employee_name
+            }
+            for todo in todos_data
+        ]
+    }
 
-    with open("{}.json".format(user_id), "w") as jsonfile:
-        json.dump({user_id: [{
-                "task": t.get("title"),
-                "completed": t.get("completed"),
-                "username": username
-<<<<<<< HEAD
-            } for t in todos]}, jsonfile)
-=======
-            } for t in todos]}, jsonfile)
->>>>>>> d6a8d0dcf23b28829cd6b9cf5fd4f6415a4cc277
+    file_name = f"{employee_id}.json"
+    with open(file_name, mode='w') as json_file:
+        json.dump(json_data, json_file, indent=4)
+
+if __name__ == '__main__':
+    url = 'https://jsonplaceholder.typicode.com/'
+    employee_id = sys.argv[1]
+    usr_data = r.get(url + 'users/{}'.format(employee_id)).json()
+    to_do = r.get(url + 'todos', params={'userId': employee_id}).json()
+
+    export_to_json(employee_id, to_do)
