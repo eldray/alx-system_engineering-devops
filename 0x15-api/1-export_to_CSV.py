@@ -1,52 +1,61 @@
-#!/usr/bin/python3
-"""Script to export data in the CSV format"""
-import requests as r
+import requests
 import csv
 import sys
 
-def get_employee_name(employee_id):
-    url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
-    response = r.get(url)
-    if response.status_code == 200:
-        return response.json()['name']
-    else:
-        raise ValueError(f"Could not fetch user information for employee ID {employee_id}")
-
-def export_to_csv(employee_id, todos_data):
-    employee_name = get_employee_name(employee_id)
-    file_name = f"{employee_id}.csv"
-
-    with open(file_name, mode='w', newline='') as csv_file:
-        fieldnames = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writeheader()
-
-        for todo in todos_data:
-            writer.writerow({
-                'USER_ID': employee_id,
-                'USERNAME': employee_name,
-                'TASK_COMPLETED_STATUS': str(todo['completed']),
-                'TASK_TITLE': todo['title']
-            })
-
-if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
-        sys.exit(1)
+def fetch_employee_data(employee_id):
+    base_url = 'https://jsonplaceholder.typicode.com'
+    user_url = f'{base_url}/users/{employee_id}'
+    todos_url = f'{base_url}/todos?userId={employee_id}'
 
     try:
-        employee_id = int(sys.argv[1])
-    except ValueError:
-        print("Employee ID must be an integer.")
+        user_response = requests.get(user_url)
+        todos_response = requests.get(todos_url)
+
+        user_data = user_response.json()
+        todos_data = todos_response.json()
+
+        return user_data, todos_data
+    except requests.exceptions.RequestException as e:
+        print(f"Error occurred while fetching data: {e}")
         sys.exit(1)
 
-    url = 'https://jsonplaceholder.typicode.com/todos'
-    params = {'userId': employee_id}
-    response = r.get(url, params=params)
+def display_todo_list_progress(employee_name, done_tasks, total_tasks, completed_tasks):
+    print(f"Employee {employee_name} is done with tasks({done_tasks}/{total_tasks}):")
+    for task in completed_tasks:
+        print(f"\t{task['title']}")
 
-    if response.status_code != 200:
-        print("Error: Could not fetch TODO data for the specified employee ID.")
+def export_to_csv(user_id, username, todos_data):
+    file_name = f"{user_id}.csv"
+    with open(file_name, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+
+        for task in todos_data:
+            task_id = task['id']
+            title = task['title']
+            completed = task['completed']
+
+            writer.writerow([user_id, username, completed, title])
+
+    print(f"Data exported to {file_name} successfully.")
+
+def main():
+    if len(sys.argv) != 2 or not sys.argv[1].isdigit():
+        print("Please provide a valid employee ID as a parameter.")
         sys.exit(1)
 
-    to_do = response.json()
-    export_to_csv(employee_id, to_do)
+    employee_id = int(sys.argv[1])
+
+    user_data, todos_data = fetch_employee_data(employee_id)
+
+    employee_name = user_data['name']
+    total_tasks = len(todos_data)
+    completed_tasks = [task for task in todos_data if task['completed']]
+
+    display_todo_list_progress(employee_name, len(completed_tasks), total_tasks, completed_tasks)
+
+    # Export data to CSV file
+    export_to_csv(employee_id, employee_name, todos_data)
+
+if __name__ == "__main__":
+    main()
